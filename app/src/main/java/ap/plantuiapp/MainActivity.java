@@ -38,7 +38,7 @@ public class MainActivity extends ActionBarActivity{
     }
 
     public void goToTimerActivity(View view) {
-            Intent intent = new Intent(MainActivity.this, Timer.class);
+            Intent intent = new Intent(MainActivity.this, timermenu.class);
             startActivity(intent);
     }
 

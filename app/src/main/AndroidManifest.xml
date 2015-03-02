@@ -24,6 +24,10 @@
             android:name=".Timer"
             android:label="@string/title_activity_timer" >
         </activity>
+        <activity
+            android:name=".timer"
+            android:label="@string/title_activity_timer" >
+        </activity>
     </application>
 
 </manifest>

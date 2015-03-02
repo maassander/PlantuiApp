@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< e118eecb872feca761935e99cd493c184085a956
       <module fileurl="file://$PROJECT_DIR$/PlantuiAppOrigineel.iml" filepath="$PROJECT_DIR$/PlantuiAppOrigineel.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/PlantuiApp.iml" filepath="$PROJECT_DIR$/PlantuiApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PlantuiApp.git.iml" filepath="$PROJECT_DIR$/PlantuiApp.git.iml" />
+>>>>>>> 78c502215f1b66f9b264615eb80856f7a2988b11
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

@@ -20,6 +20,10 @@
             android:name=".bluetooth"
             android:label="@string/title_activity_bluetooth" >
         </activity>
+        <activity
+            android:name=".Timer"
+            android:label="@string/title_activity_timer" >
+        </activity>
     </application>
 
 </manifest>

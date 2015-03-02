@@ -1,11 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">PlantuiApp</string>
 
+    <string name="app_name">PlantuiApp</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+
     <string name="title_activity_bluetooth">bluetooth</string>
     <string name="list_devices">List Devices</string>
     <string name="scan">Scan</string>
     <string name="connect">Connect</string>
     <string name="bluetoothswitch">Bluetooth On / Off</string>
+
+    <string name="title_activity_timer">Timer</string>
+    <string name="button_AddTimer">Add Timer</string>
+    <string name="button_RemoveTimer">Remove Timer</string>
+    <string name="label_Timer">Timer</string>
+    <string name="button_SetTimer">Set as schedule</string>
+
+
+
 </resources>

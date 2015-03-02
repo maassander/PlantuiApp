@@ -10,8 +10,7 @@ import android.widget.ListView;
 
 public class Timer extends ActionBarActivity {
 
-    private String[] monthsArray = { "JAN", "FEB", "MAR", "APR", "MAY", "JUNE", "JULY",
-            "AUG", "SEPT", "OCT", "NOV", "DEC" };
+    private String[] monthsArray = { "Mooie plantjes", "Grote plantjes", "Groene plantjes", "Groenere plantjes"};
 
     private ListView monthsListView;
     private ArrayAdapter arrayAdapter;
@@ -21,9 +20,6 @@ public class Timer extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timermenu);
 
-
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_timermenu);
         monthsListView = (ListView) findViewById(R.id.listView2);
         // this-The current activity context.
         // Second param is the resource Id for list layout row item

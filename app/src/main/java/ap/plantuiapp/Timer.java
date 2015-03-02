@@ -4,14 +4,32 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 
 public class Timer extends ActionBarActivity {
 
+    private String[] monthsArray = { "JAN", "FEB", "MAR", "APR", "MAY", "JUNE", "JULY",
+            "AUG", "SEPT", "OCT", "NOV", "DEC" };
+
+    private ListView monthsListView;
+    private ArrayAdapter arrayAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_timerMenu);
+        setContentView(R.layout.activity_timermenu);
+
+
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_timermenu);
+        monthsListView = (ListView) findViewById(R.id.listView2);
+        // this-The current activity context.
+        // Second param is the resource Id for list layout row item
+        // Third param is input array
+        arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, monthsArray);
+        monthsListView.setAdapter(arrayAdapter);
     }
 
 

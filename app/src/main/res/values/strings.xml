@@ -20,5 +20,11 @@
     <string name="button_SetTimer">Set as schedule</string>
 
 
+    <string name="plantui">Plantui</string>
+    <string name="red">Red</string>
+    <string name="blue">Blue</string>
+    <string name="green">Green</string>
+
+
 
 </resources>

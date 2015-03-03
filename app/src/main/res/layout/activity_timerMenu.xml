@@ -20,7 +20,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/label_Timer"
+            android:text="@string/label_timer"
             android:id="@+id/textView"
             android:layout_columnSpan="2"
             android:layout_row="0"
@@ -30,13 +30,13 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/button_AddTimer"
+            android:text="@string/button_addtimer"
             android:id="@+id/button" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/button_RemoveTimer"
+            android:text="@string/button_removetimer"
             android:id="@+id/button2" />
 
         <ListView
@@ -47,7 +47,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/button_SetTimer"
+            android:text="@string/button_settimer"
             android:id="@+id/button3" />
 
     </TableLayout>

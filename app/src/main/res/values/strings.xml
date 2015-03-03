@@ -3,7 +3,7 @@
 
     <string name="app_name">PlantuiApp</string>
     <string name="hello_world">Hello world!</string>
-    <string name="button_GoToTimerMenu">Go To Timer</string>
+    <string name="button_gototimermenu">Go To Timer</string>
     <string name="button_GoToBluetoothMenu">Go To Bluetooth</string>
     <string name="action_settings">Settings</string>
 
@@ -14,10 +14,10 @@
     <string name="bluetoothswitch">Bluetooth On / Off</string>
 
     <string name="title_activity_timer">Timer</string>
-    <string name="button_AddTimer">Add Timer</string>
-    <string name="button_RemoveTimer">Remove Timer</string>
-    <string name="label_Timer">Timer</string>
-    <string name="button_SetTimer">Set as schedule</string>
+    <string name="button_addtimer">Add Timer</string>
+    <string name="button_removetimer">Remove Timer</string>
+    <string name="label_timer">Timer</string>
+    <string name="button_settimer">Set as schedule</string>
 
 
     <string name="plantui">Plantui</string>

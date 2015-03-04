@@ -11,12 +11,16 @@ import android.widget.Button;
 
 public class MainActivity extends ActionBarActivity implements View.OnClickListener{
     Button Timerbtn;
+    Button Bluetoothbtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Timerbtn = (Button)findViewById(R.id.ButtonGoToTimer);
         Timerbtn.setOnClickListener(this);
+        Bluetoothbtn = (Button)findViewById(R.id.BtnGoToBluetooth);
+        Bluetoothbtn.setOnClickListener(this);
+
     }
 
     @Override
@@ -57,6 +61,9 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         {
             case R.id.ButtonGoToTimer:
                 startActivity(new Intent("ap.plantuiapp.Timer"));
+                break;
+            case R.id.BtnGoToBluetooth:
+                startActivity(new Intent("ap.plantuiapp.bluetooth"));
                 break;
 
         }

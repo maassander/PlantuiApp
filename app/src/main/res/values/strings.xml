@@ -25,7 +25,12 @@
     <string name="blue">Blue</string>
     <string name="green">Green</string>
     <string name="helpplantuiapp">This is the popupMenu behind helpbutton</string>
+    <string name="title_activity_blueled">blueled</string>
+    <string name="title_activity_redled">redled</string>
+    <string name="title_activity_greenled">greenled</string>
 
-
+    <string name="redvalue">Red led value</string>
+    <string name="bluevalue">Blue led value</string>
+    <string name="greenvalue">Green led value</string>
 
 </resources>

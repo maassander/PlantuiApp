@@ -15,14 +15,23 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     Button Timerbtn;
     Button Bluetoothbtn;
     ImageButton HelpButton;
+    Button bluebtn;
+    Button redbtn;
+    Button greenbtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Timerbtn = (Button) findViewById(R.id.ButtonGoToTimer);
         Timerbtn.setOnClickListener(this);
+        bluebtn = (Button)findViewById(R.id.Btn_Blue);
+        bluebtn.setOnClickListener(this);
         Bluetoothbtn = (Button) findViewById(R.id.BtnGoToBluetooth);
         Bluetoothbtn.setOnClickListener(this);
+        redbtn = (Button)findViewById(R.id.Btn_Red);
+        redbtn.setOnClickListener(this);
+        greenbtn = (Button)findViewById(R.id.Btn_Green);
+        greenbtn.setOnClickListener(this);
         HelpButton = (ImageButton) findViewById(R.id.Imghelpbutton);
         HelpButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,6 +88,14 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
             case R.id.BtnGoToBluetooth:
                 startActivity(new Intent("ap.plantuiapp.bluetooth"));
                 break;
+            case R.id.Btn_Blue:
+                startActivity(new Intent("ap.plantuiapp.blueled"));
+                break;
+            case R.id.Btn_Red:
+                startActivity(new Intent("ap.plantuiapp.redled"));
+                break;
+            case R.id.Btn_Green:
+                startActivity(new Intent("ap.plantuiapp.greenled"));
 
         }
     }

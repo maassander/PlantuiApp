@@ -30,13 +30,40 @@
             android:label="@string/title_activity_timer" >
             <intent-filter>
                 <action android:name="ap.plantuiapp.Timer" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".timermenu"
             android:label="@string/title_activity_timer" >
+        </activity>
+        <activity
+            android:name=".blueled"
+            android:label="@string/title_activity_blueled" >
+            <intent-filter>
+                <action android:name="ap.plantuiapp.blueled" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".redled"
+            android:label="@string/title_activity_redled" >
+            <intent-filter>
+                <action android:name="ap.plantuiapp.redled" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".greenled"
+            android:label="@string/title_activity_greenled" >
+            <intent-filter>
+                <action android:name="ap.plantuiapp.greenled" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
     </application>
 

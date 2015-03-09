@@ -19,6 +19,7 @@
     <string name="button_removetimer">Remove Timer</string>
     <string name="label_timer">Timer</string>
     <string name="button_settimer">Set as schedule</string>
+    <string name="label_hint_ScheduleName">Schedule Name</string>
 
 
     <string name="plantui">Plantui</string>

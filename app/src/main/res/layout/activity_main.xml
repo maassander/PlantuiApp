@@ -187,7 +187,7 @@
                 android:layout_height="50dp"
                 android:text="@string/label_timer"
                 android:textAllCaps="false"
-                android:id="@+id/ButtonGoToTimer"
+                android:id="@+id/ButtonGoToTimerMenu"
                 android:layout_column="4"
                 android:layout_row="0"
                 android:background="@drawable/shape"

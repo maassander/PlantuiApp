@@ -35,8 +35,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".timermenu"
+            android:name=".TimerMenu"
             android:label="@string/title_activity_timer" >
+            <intent-filter>
+                <action android:name="ap.plantuiapp.TimerMenu" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".blueled"

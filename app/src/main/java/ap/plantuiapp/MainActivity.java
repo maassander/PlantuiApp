@@ -22,7 +22,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Timerbtn = (Button) findViewById(R.id.ButtonGoToTimer);
+        Timerbtn = (Button) findViewById(R.id.ButtonGoToTimerMenu);
         Timerbtn.setOnClickListener(this);
         bluebtn = (Button)findViewById(R.id.Btn_Blue);
         bluebtn.setOnClickListener(this);
@@ -68,22 +68,12 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         return super.onOptionsItemSelected(item);
     }
 
-    public void goToTimerActivity(View view) {
-            Intent intent = new Intent(MainActivity.this, timermenu.class);
-            startActivity(intent);
-    }
-
-    public void goToBluetoothActivity(View view) {
-            Intent intent = new Intent(MainActivity.this, bluetooth.class);
-            startActivity(intent);
-    }
-
     @Override
     public void onClick(View v) {
         switch (v.getId())
         {
-            case R.id.ButtonGoToTimer:
-                startActivity(new Intent("ap.plantuiapp.Timer"));
+            case R.id.ButtonGoToTimerMenu:
+                startActivity(new Intent("ap.plantuiapp.TimerMenu"));
                 break;
             case R.id.BtnGoToBluetooth:
                 startActivity(new Intent("ap.plantuiapp.grid"));

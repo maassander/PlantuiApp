@@ -1,14 +1,16 @@
 package ap.plantuiapp;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 
-public class timermenu extends ActionBarActivity {
+public class TimerMenu extends ActionBarActivity {
 
     private String[] monthsArray = { "Mooie plantjes", "Grote plantjes", "Groene plantjes", "Groenere plantjes"};
 
@@ -49,5 +51,10 @@ public class timermenu extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void goToTimerActivity(View view) {
+        Intent intent = new Intent(TimerMenu.this, Timer.class);
+        startActivity(intent);
     }
 }

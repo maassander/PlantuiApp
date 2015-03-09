@@ -33,5 +33,6 @@
     <string name="redvalue">Red led value</string>
     <string name="bluevalue">Blue led value</string>
     <string name="greenvalue">Green led value</string>
+    <string name="title_activity_grid">grid</string>
 
 </resources>

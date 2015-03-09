@@ -65,6 +65,10 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".grid"
+            android:label="@string/title_activity_grid" >
+        </activity>
     </application>
 
 </manifest>

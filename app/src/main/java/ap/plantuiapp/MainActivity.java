@@ -86,7 +86,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                 startActivity(new Intent("ap.plantuiapp.Timer"));
                 break;
             case R.id.BtnGoToBluetooth:
-                startActivity(new Intent("ap.plantuiapp.bluetooth"));
+                startActivity(new Intent("ap.plantuiapp.grid"));
                 break;
             case R.id.Btn_Blue:
                 startActivity(new Intent("ap.plantuiapp.blueled"));

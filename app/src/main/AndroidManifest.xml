@@ -68,6 +68,11 @@
         <activity
             android:name=".grid"
             android:label="@string/title_activity_grid" >
+            <intent-filter>
+                <action android:name="ap.plantuiapp.grid" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
     </application>
 

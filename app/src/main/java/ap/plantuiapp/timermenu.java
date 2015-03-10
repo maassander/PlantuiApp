@@ -20,9 +20,9 @@ public class timermenu extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_timerMenu);
+        setContentView(R.layout.activity_timermenu);
 
-        monthsListView = (ListView) findViewById(R.id.listView2);
+        monthsListView = (ListView) findViewById(R.id.listofdevices);
         // this-The current activity context.
         // Second param is the resource Id for list layout row item
         // Third param is input array

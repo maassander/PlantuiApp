@@ -35,10 +35,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".TimerMenu"
+            android:name=".timermenu"
             android:label="@string/title_activity_timer" >
             <intent-filter>
-                <action android:name="ap.plantuiapp.TimerMenu" />
+                <action android:name="ap.plantuiapp.timermenu" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>

@@ -44,7 +44,7 @@
         <ListView
             android:layout_width="wrap_content"
             android:layout_height="316dp"
-            android:id="@+id/listView2" />
+            android:id="@+id/listofdevices" />
 
         <Button
             android:layout_width="wrap_content"

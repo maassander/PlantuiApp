@@ -10,7 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 
-public class TimerMenu extends ActionBarActivity {
+public class timermenu extends ActionBarActivity {
 
     private String[] monthsArray = { "Mooie plantjes", "Grote plantjes", "Groene plantjes", "Groenere plantjes"};
 
@@ -20,13 +20,13 @@ public class TimerMenu extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_timermenu);
+        setContentView(R.layout.activity_timerMenu);
 
         monthsListView = (ListView) findViewById(R.id.listView2);
         // this-The current activity context.
         // Second param is the resource Id for list layout row item
         // Third param is input array
-        arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, monthsArray);
+       arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, monthsArray);
         monthsListView.setAdapter(arrayAdapter);
     }
 
@@ -54,7 +54,7 @@ public class TimerMenu extends ActionBarActivity {
     }
 
     public void goToTimerActivity(View view) {
-        Intent intent = new Intent(TimerMenu.this, Timer.class);
+        Intent intent = new Intent(timermenu.this, Timer.class);
         startActivity(intent);
     }
 }

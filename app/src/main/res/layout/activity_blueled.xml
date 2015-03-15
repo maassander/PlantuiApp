@@ -25,7 +25,7 @@
                     android:text="@string/blue"
                     android:textSize="50sp"
                     android:id="@+id/textView2"
-                    android:layout_column="0"
+                    android:layout_column="1"
                     android:layout_weight="1" />
 
             </TableRow>

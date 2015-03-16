@@ -32,7 +32,7 @@
                     android:textSize="50sp"
                     android:layout_span="2"
                     android:layout_weight="1"
-                    android:layout_column="1" />
+                    android:layout_column="0" />
             </TableRow>
 
             <TableRow
@@ -142,13 +142,23 @@
                     android:layout_span="3"
                     android:layout_weight="1" />
 
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1">
+
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
                     android:background="@drawable/help"
-                    android:id="@+id/Imghelpbutton" />
+                    android:id="@+id/Imghelpbutton"
+                    android:layout_column="2"
+                    android:layout_span="0" />
             </TableRow>
+
         </TableLayout>
     </ScrollView>
 </RelativeLayout>

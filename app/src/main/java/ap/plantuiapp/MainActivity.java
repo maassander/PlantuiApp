@@ -73,7 +73,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         switch (v.getId())
         {
             case R.id.ButtonGoToTimerMenu:
-                startActivity(new Intent("ap.plantuiapp.TimerMenu"));
+                startActivity(new Intent("ap.plantuiapp.timermenu"));
                 break;
             case R.id.BtnGoToBluetooth:
                 startActivity(new Intent("ap.plantuiapp.bluetooth"));

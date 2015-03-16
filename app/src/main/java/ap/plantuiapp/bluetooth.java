@@ -23,6 +23,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.IOException;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Set;
 import java.util.UUID;
@@ -43,6 +44,17 @@ public class bluetooth extends ActionBarActivity
                 // Add the name and address to an array adapter to show in a ListView
                 adapter.add(bluetoothDevice.getName() + "\n"
                         + bluetoothDevice.getAddress());
+            }
+            if (BluetoothDevice.ACTION_BOND_STATE_CHANGED.equals(action)) {
+                final int state        = intent.getIntExtra(BluetoothDevice.EXTRA_BOND_STATE, BluetoothDevice.ERROR);
+                final int prevState    = intent.getIntExtra(BluetoothDevice.EXTRA_PREVIOUS_BOND_STATE, BluetoothDevice.ERROR);
+
+                if (state == BluetoothDevice.BOND_BONDED && prevState == BluetoothDevice.BOND_BONDING) {
+                    switchStatus.setText("Paired");
+                } else if (state == BluetoothDevice.BOND_NONE && prevState == BluetoothDevice.BOND_BONDED){
+                    switchStatus.setText("Unpaired");
+                }
+
             }
         }
     };
@@ -106,6 +118,7 @@ public class bluetooth extends ActionBarActivity
                 String  itemValue = (String) lv.getItemAtPosition(position);
                 String MAC = itemValue.substring(itemValue.length() - 17);
                 BTdev = BA.getRemoteDevice(MAC);
+                switchStatus.setText(MAC);
             }
         });
         adapter = new ArrayAdapter
@@ -131,6 +144,10 @@ public class bluetooth extends ActionBarActivity
     public void scan(View view)
     {
         final ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1);
+
+        IntentFilter filter = new IntentFilter(BluetoothDevice.ACTION_FOUND);
+        registerReceiver(BR, filter);
+
         BA.startDiscovery();
         BR = new BroadcastReceiver()
         {
@@ -140,20 +157,37 @@ public class bluetooth extends ActionBarActivity
                 if (BluetoothDevice.ACTION_FOUND.equals(action)) {
                     BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
                     adapter.add(device.getName() + "\n" + device.getAddress());
-                    //BTdevMAC = device.getAddress();
                 }
             }
         };
         lv.setAdapter(adapter);
-        IntentFilter filter = new IntentFilter(BluetoothDevice.ACTION_FOUND);
-        registerReceiver(BR, filter);
+    }
+
+    protected void GetVisible()
+    {
+        // Make local device discoverable
+        Intent discoverableIntent = new
+                Intent(BluetoothAdapter.ACTION_REQUEST_DISCOVERABLE);
+        discoverableIntent.putExtra(BluetoothAdapter.EXTRA_DISCOVERABLE_DURATION, DISCOVERABLE_DURATION);
+        startActivityForResult(discoverableIntent, DISCOVERABLE_BT_REQUEST_CODE);
     }
 
     public void connect(View view)
     {
+        GetVisible();
         Log.i("CONNECT", BTdev.toString());
         ConnectThread ct = new ConnectThread(BTdev);
         ct.start();
+        pairDevice(BTdev);
+    }
+
+    private void pairDevice(BluetoothDevice device) {
+        try {
+            Method method = device.getClass().getMethod("createBond", (Class[]) null);
+            method.invoke(device, (Object[]) null);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private class ConnectThread extends Thread
@@ -269,6 +303,26 @@ public class bluetooth extends ActionBarActivity
         Intent getVisible = new Intent(BluetoothAdapter.ACTION_REQUEST_DISCOVERABLE);
         startActivityForResult(getVisible, 0);
     }*/
+
+    @Override
+    public void onDestroy()
+    {
+        unregisterReceiver(BR);
+        super.onDestroy();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // Register the BroadcastReceiver for ACTION_FOUND
+        IntentFilter filter = new IntentFilter(BluetoothDevice.ACTION_FOUND);
+        this.registerReceiver(BR, filter);
+    }
+    @Override
+    protected void onPause() {
+        super.onPause();
+        this.unregisterReceiver(BR);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

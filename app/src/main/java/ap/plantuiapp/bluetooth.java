@@ -31,16 +31,31 @@ public class bluetooth extends ActionBarActivity
 {
     private Switch OnOff;
     private Button List, Scan, Connect;
+    private ArrayAdapter adapter;
     private BluetoothAdapter BA;
-    private BroadcastReceiver BR;
+    private BroadcastReceiver BR = new BroadcastReceiver() {
+        public void onReceive(Context context, Intent intent) {
+            String action = intent.getAction();
+            // Whenever a remote Bluetooth device is found
+            if (BluetoothDevice.ACTION_FOUND.equals(action)) {
+                // Get the BluetoothDevice object from the Intent
+                BluetoothDevice bluetoothDevice = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
+                // Add the name and address to an array adapter to show in a ListView
+                adapter.add(bluetoothDevice.getName() + "\n"
+                        + bluetoothDevice.getAddress());
+            }
+        }
+    };
     private BluetoothSocket BS;
     private Set<BluetoothDevice> pairedDevices;
     private BluetoothDevice BTdev;
-    private String BTdevMAC = "0C:D2:92:6D:7C:79";
-    private static final UUID MY_UUID = UUID
+    private final static UUID MY_UUID = UUID
             .fromString("00001101-0000-1000-8000-00805F9B34FB");
     private ListView lv;
     private TextView switchStatus;
+    private static final int ENABLE_BT_REQUEST_CODE = 1;
+    private static final int DISCOVERABLE_BT_REQUEST_CODE = 2;
+    private static final int DISCOVERABLE_DURATION = 300;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -52,11 +67,9 @@ public class bluetooth extends ActionBarActivity
         Scan = (Button)findViewById(R.id.btnScan);
         Connect = (Button)findViewById(R.id.btnConnect);
         lv = (ListView)findViewById(R.id.listView);
-        BA = BluetoothAdapter.getDefaultAdapter();
-
         switchStatus = (TextView) findViewById(R.id.StatusBox);
-
         OnOff = (Switch)findViewById(R.id.switchBluetooth);
+
         OnOff.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
         {
             @Override
@@ -87,11 +100,18 @@ public class bluetooth extends ActionBarActivity
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id)
             {
-                Toast.makeText(getApplicationContext(),
-                        ((TextView) view).getText(), Toast.LENGTH_SHORT).show();
-
+                /*Toast.makeText(getApplicationContext(),
+                        ((TextView) view).getText(), Toast.LENGTH_SHORT).show();*/
+                // ListView Clicked item value
+                String  itemValue = (String) lv.getItemAtPosition(position);
+                String MAC = itemValue.substring(itemValue.length() - 17);
+                BTdev = BA.getRemoteDevice(MAC);
             }
         });
+        adapter = new ArrayAdapter
+                (this,android.R.layout.simple_list_item_1);
+        lv.setAdapter(adapter);
+        BA = BluetoothAdapter.getDefaultAdapter();
     }
 
     public void list(View view)
@@ -131,10 +151,9 @@ public class bluetooth extends ActionBarActivity
 
     public void connect(View view)
     {
-        BTdev = BA.getRemoteDevice(BTdevMAC);
-        Log.i("TEST", BTdev.toString());
+        Log.i("CONNECT", BTdev.toString());
         ConnectThread ct = new ConnectThread(BTdev);
-        ct.run();
+        ct.start();
     }
 
     private class ConnectThread extends Thread
@@ -150,7 +169,10 @@ public class bluetooth extends ActionBarActivity
             {
                 tmp = mmDevice.createRfcommSocketToServiceRecord(MY_UUID);
             }
-            catch (IOException e) { }
+            catch (IOException e)
+            {
+                e.printStackTrace();
+            }
             mmSocket = tmp;
         }
         public void run()
@@ -158,8 +180,8 @@ public class bluetooth extends ActionBarActivity
             BA.cancelDiscovery();
             try
             {
-                Log.i("TEST", mmDevice.toString());
-                Log.i("TEST", mmSocket.toString());
+                Log.i("RUN", mmDevice.toString());
+                Log.i("RUN", mmSocket.toString());
                 mmSocket.connect();
             }
             catch (IOException connectException)
@@ -168,8 +190,10 @@ public class bluetooth extends ActionBarActivity
                 {
                     Log.i("DISCONNECT", mmSocket.toString());
                     mmSocket.close();
-                } catch (IOException closeException) { }
-                return;
+                } catch (IOException closeException)
+                {
+                    closeException.printStackTrace();
+                }
             }
             //manageConnectedSocket(mmSocket);
         }
@@ -178,7 +202,11 @@ public class bluetooth extends ActionBarActivity
             try
             {
                 mmSocket.close();
-            } catch (IOException e) { }
+            }
+            catch (IOException e)
+            {
+                e.printStackTrace();
+            }
         }
     }
 

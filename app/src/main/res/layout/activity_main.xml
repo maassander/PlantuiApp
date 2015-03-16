@@ -71,44 +71,51 @@
             </TableRow>
 
             <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
 
                 <SeekBar
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="100dp"
+                    android:layout_height="20dp"
                     android:id="@+id/seekBar4"
-                    android:max="255"
                     android:progressDrawable="@drawable/seekbarred"
-                    android:progress="5"
-                    android:rotation="270"
                     android:thumb="@drawable/arrow_red"
-                    android:layout_margin="10dp"
-                    android:layout_weight="1" />
+                    android:rotation="270"
+                    android:max="255"
+                    android:progress="5"
+                    android:indeterminate="false"
+                    android:layout_weight="1"
+                    android:layout_marginBottom="40dp"
+                    android:layout_marginTop="40dp" />
 
                 <SeekBar
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="100dp"
+                    android:layout_height="20dp"
+                    android:max="255"
+                    android:progress="5"
+                    android:progressDrawable="@drawable/seekbarsgreen"
+                    android:thumb="@drawable/aroow_green"
+                    android:id="@+id/seekBar6"
+                    android:rotation="270"
+                    android:indeterminate="false"
+                    android:layout_weight="1"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginBottom="40dp" />
+
+                <SeekBar
+                    android:layout_width="100dp"
+                    android:layout_height="20dp"
                     android:id="@+id/seekBar5"
                     android:rotation="270"
-                    android:thumb="@drawable/aroow_green"
-                    android:max="255"
-                    android:progress="5"
-                    android:layout_margin="10dp"
-                    android:progressDrawable="@drawable/seekbarsgreen"
-                    android:layout_weight="1" />
-
-                <SeekBar
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:max="255"
                     android:progress="5"
                     android:progressDrawable="@drawable/seekbarblue"
                     android:thumb="@drawable/arrow_blue"
-                    android:id="@+id/seekBar6"
-                    android:layout_margin="10dp"
-                    android:rotation="270"
-                    android:layout_weight="1" />
+                    android:layout_marginBottom="40dp"
+                    android:layout_column="2"
+                    android:layout_weight="1"
+                    android:layout_marginTop="40dp" />
             </TableRow>
 
             <TableRow
@@ -155,8 +162,7 @@
                     android:layout_margin="10dp"
                     android:background="@drawable/help"
                     android:id="@+id/Imghelpbutton"
-                    android:layout_column="2"
-                    android:layout_span="0" />
+                    android:layout_column="0" />
             </TableRow>
 
         </TableLayout>

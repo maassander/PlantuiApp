@@ -24,19 +24,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/list_devices"
-            android:id="@+id/btnListDevices" />
+            android:id="@+id/btnListDevices"
+            android:onClick="list" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/scan"
-            android:id="@+id/btnScan" />
+            android:id="@+id/btnScan"
+            android:onClick="scan" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/connect"
-            android:id="@+id/btnConnect" />
+            android:id="@+id/btnConnect"
+            android:onClick="connect" />
 
         <ListView
             android:layout_width="wrap_content"

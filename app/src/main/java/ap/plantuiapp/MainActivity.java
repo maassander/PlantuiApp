@@ -11,13 +11,16 @@ import android.widget.ImageButton;
 import android.widget.PopupMenu;
 
 
+
 public class MainActivity extends ActionBarActivity implements View.OnClickListener{
+
     Button Timerbtn;
     Button Bluetoothbtn;
     ImageButton HelpButton;
     Button bluebtn;
     Button redbtn;
     Button greenbtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -78,8 +78,8 @@
                 <SeekBar
                     android:layout_width="100dp"
                     android:layout_height="20dp"
-                    android:id="@+id/seekBar4"
-                    android:progressDrawable="@drawable/seekbarred"
+                    android:id="@+id/SeekbarRed"
+                    android:progressDrawable="@drawable/seekbar_progress"
                     android:thumb="@drawable/arrow_red"
                     android:rotation="270"
                     android:max="255"
@@ -94,9 +94,9 @@
                     android:layout_height="20dp"
                     android:max="255"
                     android:progress="5"
-                    android:progressDrawable="@drawable/seekbarsgreen"
+                    android:progressDrawable="@drawable/seekbar_progress_green"
                     android:thumb="@drawable/aroow_green"
-                    android:id="@+id/seekBar6"
+                    android:id="@+id/SeekbarGreen"
                     android:rotation="270"
                     android:indeterminate="false"
                     android:layout_weight="1"
@@ -106,16 +106,48 @@
                 <SeekBar
                     android:layout_width="100dp"
                     android:layout_height="20dp"
-                    android:id="@+id/seekBar5"
+                    android:id="@+id/SeekbarBlue"
                     android:rotation="270"
                     android:max="255"
                     android:progress="5"
-                    android:progressDrawable="@drawable/seekbarblue"
+                    android:progressDrawable="@drawable/seekbar_progress_blue"
                     android:thumb="@drawable/arrow_blue"
                     android:layout_marginBottom="40dp"
                     android:layout_column="2"
                     android:layout_weight="1"
-                    android:layout_marginTop="40dp" />
+                    android:layout_marginTop="40dp"
+                    android:focusableInTouchMode="false" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/TextViewSeekBarRed"
+                    android:text="100"
+                    android:layout_marginLeft="50dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/TextViewSeekBarGreen"
+                    android:text="100"
+                    android:layout_marginLeft="50dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/TextViewSeekBarBlue"
+                    android:text="100"
+                    android:layout_marginLeft="50dp"
+                    android:layout_weight="1" />
+
             </TableRow>
 
             <TableRow

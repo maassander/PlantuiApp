@@ -80,10 +80,8 @@
                     android:layout_height="20dp"
                     android:id="@+id/SeekbarRed"
                     android:progressDrawable="@drawable/seekbar_progress"
-                    android:thumb="@drawable/arrow_red"
+                    android:thumb="@drawable/thumb"
                     android:rotation="270"
-                    android:max="255"
-                    android:progress="5"
                     android:indeterminate="false"
                     android:layout_weight="1"
                     android:layout_marginBottom="40dp"
@@ -92,10 +90,8 @@
                 <SeekBar
                     android:layout_width="100dp"
                     android:layout_height="20dp"
-                    android:max="255"
-                    android:progress="5"
                     android:progressDrawable="@drawable/seekbar_progress_green"
-                    android:thumb="@drawable/aroow_green"
+                    android:thumb="@drawable/thumb"
                     android:id="@+id/SeekbarGreen"
                     android:rotation="270"
                     android:indeterminate="false"
@@ -108,10 +104,8 @@
                     android:layout_height="20dp"
                     android:id="@+id/SeekbarBlue"
                     android:rotation="270"
-                    android:max="255"
-                    android:progress="5"
                     android:progressDrawable="@drawable/seekbar_progress_blue"
-                    android:thumb="@drawable/arrow_blue"
+                    android:thumb="@drawable/thumb"
                     android:layout_marginBottom="40dp"
                     android:layout_column="2"
                     android:layout_weight="1"
@@ -128,7 +122,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/TextViewSeekBarRed"
-                    android:text="100"
+                    android:text="0"
                     android:layout_marginLeft="50dp"
                     android:layout_weight="1" />
 
@@ -136,7 +130,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/TextViewSeekBarGreen"
-                    android:text="100"
+                    android:text="0"
                     android:layout_marginLeft="50dp"
                     android:layout_weight="1" />
 
@@ -144,7 +138,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/TextViewSeekBarBlue"
-                    android:text="100"
+                    android:text="0"
                     android:layout_marginLeft="50dp"
                     android:layout_weight="1" />
 

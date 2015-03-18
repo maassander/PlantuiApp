@@ -9,7 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.PopupMenu;
-
+import android.widget.SeekBar;
+import android.widget.TextView;
 
 
 public class MainActivity extends ActionBarActivity implements View.OnClickListener{
@@ -20,6 +21,12 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     Button bluebtn;
     Button redbtn;
     Button greenbtn;
+    SeekBar SeekbarRed;
+    SeekBar SeekbarGreen;
+    SeekBar SeekbarBlue;
+    TextView RedValue;
+    TextView BlueValue;
+    TextView GreenValue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +42,66 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         redbtn.setOnClickListener(this);
         greenbtn = (Button)findViewById(R.id.Btn_Green);
         greenbtn.setOnClickListener(this);
+        SeekbarRed = (SeekBar)findViewById(R.id.SeekbarRed);
+        SeekbarGreen = (SeekBar)findViewById(R.id.SeekbarGreen);
+        SeekbarBlue = (SeekBar)findViewById(R.id.SeekbarBlue);
+        SeekbarRed.setMax(100);
+        SeekbarRed.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                RedValue.setText(progress + "");
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+        SeekbarBlue.setMax(100);
+        SeekbarBlue.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser)
+            {
+                BlueValue.setText(progress+"");
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+        SeekbarGreen.setMax(100);
+
+        SeekbarGreen.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser)
+            {
+                GreenValue.setText(progress+"");
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+        RedValue = (TextView)findViewById(R.id.TextViewSeekBarRed);
+        BlueValue =(TextView)findViewById(R.id.TextViewSeekBarBlue);
+        GreenValue =(TextView)findViewById(R.id.TextViewSeekBarGreen);
         HelpButton = (ImageButton) findViewById(R.id.Imghelpbutton);
         HelpButton.setOnClickListener(new View.OnClickListener() {
             @Override

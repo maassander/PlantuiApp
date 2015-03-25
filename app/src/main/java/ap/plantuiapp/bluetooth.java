@@ -2,6 +2,7 @@ package ap.plantuiapp;
 
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
+import android.bluetooth.BluetoothServerSocket;
 import android.bluetooth.BluetoothSocket;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -163,22 +164,25 @@ public class bluetooth extends ActionBarActivity
         lv.setAdapter(adapter);
     }
 
-    protected void GetVisible()
+    public void GetVisible(View view)
     {
-        // Make local device discoverable
         Intent discoverableIntent = new
                 Intent(BluetoothAdapter.ACTION_REQUEST_DISCOVERABLE);
         discoverableIntent.putExtra(BluetoothAdapter.EXTRA_DISCOVERABLE_DURATION, DISCOVERABLE_DURATION);
         startActivityForResult(discoverableIntent, DISCOVERABLE_BT_REQUEST_CODE);
+
+        AcceptThread at = new AcceptThread();
+        at.start();
     }
 
     public void connect(View view)
     {
-        GetVisible();
         Log.i("CONNECT", BTdev.toString());
+        AcceptThread at = new AcceptThread();
+        at.start();
         ConnectThread ct = new ConnectThread(BTdev);
         ct.start();
-        pairDevice(BTdev);
+        //pairDevice(BTdev);
     }
 
     private void pairDevice(BluetoothDevice device) {
@@ -241,6 +245,47 @@ public class bluetooth extends ActionBarActivity
             {
                 e.printStackTrace();
             }
+        }
+    }
+
+    private class AcceptThread extends Thread {
+        private final BluetoothServerSocket mmServerSocket;
+
+        public AcceptThread() {
+            BluetoothServerSocket tmp = null;
+            try {
+                tmp = BA.listenUsingRfcommWithServiceRecord("Server", MY_UUID);
+            } catch (IOException e) { }
+            mmServerSocket = tmp;
+        }
+
+        public void run() {
+            BluetoothSocket socket = null;
+            while (true) {
+                try {
+                    socket = mmServerSocket.accept();
+                } catch (IOException e) {
+                    break;
+                }
+                if (socket != null) {
+                    //manageConnectedSocket(socket);
+                    try
+                    {
+                        mmServerSocket.close();
+                    }
+                    catch (IOException e)
+                    {
+                        e.printStackTrace();
+                    }
+                    break;
+                }
+            }
+        }
+
+        public void cancel() {
+            try {
+                mmServerSocket.close();
+            } catch (IOException e) { }
         }
     }
 

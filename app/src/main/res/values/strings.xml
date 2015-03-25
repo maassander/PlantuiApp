@@ -13,6 +13,7 @@
     <string name="scan">Scan</string>
     <string name="connect">Connect</string>
     <string name="bluetoothswitch">Bluetooth On / Off</string>
+    <string name="visible">Get Visible</string>
 
     <string name="title_activity_timer">Timer</string>
     <string name="button_addtimer">Add Timer</string>

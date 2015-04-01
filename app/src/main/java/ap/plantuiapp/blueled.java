@@ -1,5 +1,6 @@
 package ap.plantuiapp;
 
+import android.app.AlertDialog;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -58,7 +59,12 @@ public class blueled extends ActionBarActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            return true;
+            final AlertDialog.Builder alert = new AlertDialog.Builder(blueled.this);
+            alert.setMessage("Meer tekst hierin...");
+            alert.setTitle("Help");
+            alert.setIcon(R.drawable.help);
+            alert.create();
+            alert.show();
         }
 
         return super.onOptionsItemSelected(item);

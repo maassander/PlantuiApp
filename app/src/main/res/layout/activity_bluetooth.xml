@@ -35,8 +35,7 @@
             android:id="@+id/btnListDevices"
             android:onClick="list"
             android:textColor="@android:color/white"
-            android:backgroundTintMode="multiply"
-            android:backgroundTint="@android:color/black" />
+            android:backgroundTintMode="multiply" />
 
         <Button
             android:layout_width="wrap_content"
@@ -45,7 +44,8 @@
             android:id="@+id/btnVisible"
             android:nestedScrollingEnabled="false"
             android:onClick="GetVisible"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white"
+            android:backgroundTintMode="multiply" />
 
         <Button
             android:layout_width="wrap_content"
@@ -53,7 +53,8 @@
             android:text="@string/scan"
             android:id="@+id/btnScan"
             android:onClick="scan"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white"
+            android:backgroundTintMode="multiply" />
 
         <Button
             android:layout_width="wrap_content"
@@ -61,7 +62,8 @@
             android:text="@string/connect"
             android:id="@+id/btnConnect"
             android:onClick="connect"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white"
+            android:backgroundTintMode="multiply" />
 
         <ListView
             android:layout_width="wrap_content"

@@ -1,5 +1,4 @@
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     tools:context="ap.plantuiapp.bluetooth">
@@ -19,24 +18,19 @@
             android:layout_width="wrap_content"
             android:layout_height="46dp"
             android:text="@string/bluetoothswitch"
-            android:id="@+id/switchBluetooth"
-            android:textColor="@android:color/white" />
+            android:id="@+id/switchBluetooth" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="31dp"
-            android:id="@+id/StatusBox"
-            android:textColor="@android:color/white" />
+            android:id="@+id/StatusBox" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/list_devices"
             android:id="@+id/btnListDevices"
-            android:onClick="list"
-            android:textColor="@android:color/white"
-            android:backgroundTintMode="multiply"
-            android:backgroundTint="@android:color/black" />
+            android:onClick="list" />
 
         <Button
             android:layout_width="wrap_content"
@@ -44,28 +38,25 @@
             android:text="@string/visible"
             android:id="@+id/btnVisible"
             android:nestedScrollingEnabled="false"
-            android:onClick="GetVisible"
-            android:textColor="@android:color/white" />
+            android:onClick="GetVisible" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/scan"
             android:id="@+id/btnScan"
-            android:onClick="scan"
-            android:textColor="@android:color/white" />
+            android:onClick="scan" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/connect"
             android:id="@+id/btnConnect"
-            android:onClick="connect"
-            android:textColor="@android:color/white" />
+            android:onClick="connect" />
 
         <ListView
             android:layout_width="wrap_content"
-            android:layout_height="259dp"
+            android:layout_height="69dp"
             android:id="@+id/listView" />
 
     </TableLayout>

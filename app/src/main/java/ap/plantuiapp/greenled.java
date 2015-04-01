@@ -17,6 +17,7 @@ public class greenled extends ActionBarActivity {
         setContentView(R.layout.activity_greenled);
         SeekbarIntensityGreen = (SeekBar)findViewById(R.id.SeekBarIntensityGreen);
         IntensityGreen = (TextView)findViewById(R.id.IntensityGreenLed);
+        SeekbarIntensityGreen.setMax(255);
         SeekbarIntensityGreen.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {

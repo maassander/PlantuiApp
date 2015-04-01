@@ -17,6 +17,7 @@ public class redled extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_redled);
+        SeekbarIntensityRed.setMax(255);
         SeekbarIntensityRed = (SeekBar)findViewById(R.id.SeekBarIntensityRed);
         IntensityRed = (TextView)findViewById(R.id.IntensityRedLed);
 

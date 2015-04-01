@@ -41,6 +41,7 @@ public class timermenu extends ActionBarActivity {
         arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, monthsArray);
         monthsListView.setAdapter(arrayAdapter);
 
+
         textboxTime1 = (EditText) findViewById(R.id.textbox_time1);
         textboxTime2 = (EditText) findViewById(R.id.textbox_time2);
         textboxTime3 = (EditText) findViewById(R.id.textbox_time3);

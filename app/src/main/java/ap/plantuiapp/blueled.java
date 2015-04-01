@@ -18,8 +18,10 @@ public class blueled extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_blueled);
 
+
         SeekbarIntensityBlue = (SeekBar)findViewById(R.id.SeekBarIntensityBlue);
         IntensityBlue = (TextView)findViewById(R.id.IntensityBlueLed);
+        SeekbarIntensityBlue.setMax(255);
         SeekbarIntensityBlue.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {

@@ -21,7 +21,8 @@
     <string name="label_timer">Timer</string>
     <string name="button_settimer">Set as schedule</string>
     <string name="label_hint_ScheduleName">Schedule Name</string>
-
+    <string name="label_awake">Awake</string>
+    <string name="label_Sleep">Sleep</string>
 
     <string name="plantui">Plantui</string>
     <string name="red">Red</string>

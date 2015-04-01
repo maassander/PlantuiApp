@@ -137,6 +137,8 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
             alert.setMessage("Meer tekst hierin...");
             alert.setTitle("Help");
             alert.setIcon(R.drawable.help);
+            alert.create();
+            alert.show();
 
         }
         return super.onOptionsItemSelected(item);

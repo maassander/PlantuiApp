@@ -1,5 +1,6 @@
 package ap.plantuiapp;
 
+import android.app.AlertDialog;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothServerSocket;
@@ -385,7 +386,12 @@ public class bluetooth extends ActionBarActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            return true;
+            final AlertDialog.Builder alert = new AlertDialog.Builder(bluetooth.this);
+            alert.setMessage("Meer tekst hierin...");
+            alert.setTitle("Help");
+            alert.setIcon(R.drawable.help);
+            alert.create();
+            alert.show();
         }
 
         return super.onOptionsItemSelected(item);

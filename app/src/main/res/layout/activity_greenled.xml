@@ -45,28 +45,27 @@
                 <SeekBar
                     android:layout_width="250dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/seekBar"
+                    android:id="@+id/SeekBarIntensityGreen"
                     android:layout_weight="1" />
 
             </TableRow>
 
             <TableRow
                 android:layout_width="fill_parent"
-                android:layout_height="fill_parent">
+                android:layout_height="fill_parent"
+                android:layout_weight="1" >
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Nm"
-                    android:id="@+id/textView4" />
+                    android:text="0"
+                    android:id="@+id/IntensityGreenLed"
+                    android:layout_span="2"
+                    android:layout_gravity="center_horizontal" />
 
-                <SeekBar
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/seekBar2"
-                    android:layout_weight="1" />
             </TableRow>
+
         </TableLayout>
     </ScrollView>
 

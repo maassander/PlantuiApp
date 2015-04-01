@@ -4,14 +4,39 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.SeekBar;
+import android.widget.TextView;
 
 
 public class blueled extends ActionBarActivity {
+
+    SeekBar SeekbarIntensityBlue;
+    TextView IntensityBlue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_blueled);
+
+        SeekbarIntensityBlue = (SeekBar)findViewById(R.id.SeekBarIntensityBlue);
+        IntensityBlue = (TextView)findViewById(R.id.IntensityBlueLed);
+        SeekbarIntensityBlue.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                IntensityBlue.setText(progress + "");
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
     }
 
 

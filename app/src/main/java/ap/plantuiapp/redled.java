@@ -4,14 +4,38 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.SeekBar;
+import android.widget.TextView;
 
 
 public class redled extends ActionBarActivity {
+
+    private SeekBar SeekbarIntensityRed;
+    private TextView IntensityRed;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_redled);
+        SeekbarIntensityRed = (SeekBar)findViewById(R.id.SeekBarIntensityRed);
+        IntensityRed = (TextView)findViewById(R.id.IntensityRedLed);
+
+        SeekbarIntensityRed.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                IntensityRed.setText(progress + "");
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
     }
 
 

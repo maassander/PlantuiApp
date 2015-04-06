@@ -28,7 +28,6 @@
     <string name="red">Red</string>
     <string name="blue">Blue</string>
     <string name="green">Green</string>
-    <string name="helpplantuiapp">This is the popupMenu behind helpbutton</string>
     <string name="title_activity_blueled">blueled</string>
     <string name="title_activity_redled">redled</string>
     <string name="title_activity_greenled">greenled</string>
@@ -41,5 +40,6 @@
     <string name="title_activity_splashscreen">splashscreen</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="help">More Info</string>
 
 </resources>

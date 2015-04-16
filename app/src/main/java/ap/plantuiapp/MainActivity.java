@@ -103,18 +103,10 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         RedValue = (TextView)findViewById(R.id.TextViewSeekBarRed);
         BlueValue =(TextView)findViewById(R.id.TextViewSeekBarBlue);
         GreenValue =(TextView)findViewById(R.id.TextViewSeekBarGreen);
-        HelpButton = (ImageButton) findViewById(R.id.Imghelpbutton);
-        HelpButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                PopupMenu popup = new PopupMenu(MainActivity.this, HelpButton);
-                popup.getMenuInflater().inflate(R.menu.menu_main, popup.getMenu());
-                popup.show();
-
-            }
 
 
-        });
+
+
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu)

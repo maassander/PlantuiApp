@@ -18,7 +18,6 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
     Button Timerbtn;
     Button Bluetoothbtn;
-    ImageButton HelpButton;
     Button bluebtn;
     Button redbtn;
     Button greenbtn;
@@ -33,6 +32,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         Timerbtn = (Button) findViewById(R.id.ButtonGoToTimerMenu);
         Timerbtn.setOnClickListener(this);
         bluebtn = (Button)findViewById(R.id.Btn_Blue);
@@ -82,7 +82,6 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
             }
         });
         SeekbarGreen.setMax(100);
-
         SeekbarGreen.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser)
@@ -141,7 +140,9 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         switch (v.getId())
         {
             case R.id.ButtonGoToTimerMenu:
+
                 startActivity(new Intent("ap.plantuiapp.timermenu"));
+
                 break;
             case R.id.BtnGoToBluetooth:
                 startActivity(new Intent("ap.plantuiapp.bluetooth"));

@@ -90,7 +90,7 @@
                     android:layout_weight="1"
                     android:layout_marginBottom="40dp"
                     android:layout_marginTop="40dp"
-                    android:clickable="false" />
+                    android:nestedScrollingEnabled="false" />
 
                 <SeekBar
                     android:layout_width="100dp"
@@ -103,7 +103,7 @@
                     android:layout_weight="1"
                     android:layout_marginTop="40dp"
                     android:layout_marginBottom="40dp"
-                    android:clickable="false" />
+                    android:nestedScrollingEnabled="false" />
 
                 <SeekBar
                     android:layout_width="100dp"
@@ -117,7 +117,7 @@
                     android:layout_weight="1"
                     android:layout_marginTop="40dp"
                     android:focusableInTouchMode="false"
-                    android:clickable="false" />
+                    android:nestedScrollingEnabled="false" />
 
             </TableRow>
 
@@ -185,8 +185,6 @@
                     android:backgroundTintMode="multiply" />
 
             </TableRow>
-
-
 
         </TableLayout>
     </ScrollView>

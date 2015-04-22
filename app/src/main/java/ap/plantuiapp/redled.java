@@ -13,6 +13,8 @@ public class redled extends ActionBarActivity {
 
     private SeekBar SeekbarIntensityRed;
     private TextView IntensityRed;
+    public int intensittyRedLed;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,10 +24,12 @@ public class redled extends ActionBarActivity {
         SeekbarIntensityRed = (SeekBar)findViewById(R.id.SeekBarIntensityRed);
         IntensityRed = (TextView)findViewById(R.id.IntensityRedLed);
 
+
         SeekbarIntensityRed.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 IntensityRed.setText(progress + "");
+                intensittyRedLed = progress;
             }
 
             @Override

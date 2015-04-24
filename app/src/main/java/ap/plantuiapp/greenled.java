@@ -1,28 +1,41 @@
 package ap.plantuiapp;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
-public class greenled extends ActionBarActivity {
+
+public class greenled extends ActionBarActivity implements View.OnClickListener{
     SeekBar SeekbarIntensityGreen;
+    Button Save;
     TextView IntensityGreen;
+    int ValueGreen;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_greenled);
+        Save = (Button) findViewById(R.id.ButtonSaveGreenValue);
+        Save.setOnClickListener(this);
         SeekbarIntensityGreen = (SeekBar)findViewById(R.id.SeekBarIntensityGreen);
         IntensityGreen = (TextView)findViewById(R.id.IntensityGreenLed);
         SeekbarIntensityGreen.setMax(255);
+
         SeekbarIntensityGreen.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 IntensityGreen.setText(progress + "");
+                ValueGreen = progress;
             }
 
             @Override
@@ -65,5 +78,39 @@ public class greenled extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId())
+        {
+            case R.id.ButtonSaveGreenValue:
+                SaveGreenValue();
+                break;
+        }
+    }
+    public void SaveGreenValue()
+    {
+        FileOutputStream fosgreen = null;
+        try {
+            fosgreen = openFileOutput("ValueGreen.txt", Context.MODE_PRIVATE);
+            fosgreen.write(ValueGreen);
+
+        }
+        catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+        finally {
+            try {
+                fosgreen.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+
     }
 }

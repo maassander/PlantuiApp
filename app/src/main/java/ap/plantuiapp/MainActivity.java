@@ -163,7 +163,9 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     {
 
         try {
-              FileInputStream  fis =  openFileInput("ValueRed.txt");
+              FileInputStream  fileRedLed =  openFileInput("ValueRed.txt");
+              FileInputStream fisGreenLed = openFileInput("ValueGreen.txt");
+            FileInputStream fisBlueLed = openFileInput("ValueBlue.txt");
             int read;
             //a while because otherwise its only the first byte he read and then stops.
             /*
@@ -174,9 +176,17 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
             *32 40 40 for example
              */
 
-            while ((read = fis.read()) != -1)
+            while ((read = fileRedLed.read()) != -1)
             {
                 SeekbarRed.setProgress((char)read);
+            }
+            while((read = fisGreenLed.read())!=-1)
+            {
+                SeekbarGreen.setProgress((char)read);
+            }
+            while((read = fisBlueLed.read())!=-1)
+            {
+                SeekbarBlue.setProgress((char)read);
             }
 
         }

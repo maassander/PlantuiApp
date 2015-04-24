@@ -26,7 +26,7 @@ public class redled extends ActionBarActivity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_redled);
-        Save = (Button)findViewById(R.id.ButtonSaveValue);
+        Save = (Button)findViewById(R.id.ButtonSaveRedValue);
         Save.setOnClickListener(this);
         SeekbarIntensityRed = (SeekBar)findViewById(R.id.SeekBarIntensityRed);
         IntensityRed = (TextView)findViewById(R.id.IntensityRedLed);
@@ -88,7 +88,7 @@ public class redled extends ActionBarActivity implements View.OnClickListener {
     public void onClick(View v) {
         switch(v.getId())
         {
-            case R.id.ButtonSaveValue:
+            case R.id.ButtonSaveRedValue:
                 SaveValue();
                 break;
         }
@@ -96,11 +96,11 @@ public class redled extends ActionBarActivity implements View.OnClickListener {
     public void SaveValue()
     {
         //try catch for exception handling
-        FileOutputStream fos = null;
+        FileOutputStream fosred = null;
         try {
 
-            fos = openFileOutput("ValueRed.txt", Context.MODE_PRIVATE);
-            fos.write(ValueRed);
+            fosred = openFileOutput("ValueRed.txt", Context.MODE_PRIVATE);
+            fosred.write(ValueRed);
 
         }
         catch (FileNotFoundException e)
@@ -112,9 +112,9 @@ public class redled extends ActionBarActivity implements View.OnClickListener {
         }
         finally {
             //not caring if there is an exception or not this is running anyway.
-            if(fos!= null){
+            if(fosred!= null){
                 try {
-                    fos.close();
+                    fosred.close();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

@@ -1,25 +1,34 @@
 package ap.plantuiapp;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
-public class blueled extends ActionBarActivity {
+
+public class blueled extends ActionBarActivity implements View.OnClickListener{
 
     SeekBar SeekbarIntensityBlue;
+    Button Save;
     TextView IntensityBlue;
+    int ValueBlue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_blueled);
-
-
+        Save = (Button)findViewById(R.id.ButtonSaveBlueValue);
+        Save.setOnClickListener(this);
         SeekbarIntensityBlue = (SeekBar)findViewById(R.id.SeekBarIntensityBlue);
         IntensityBlue = (TextView)findViewById(R.id.IntensityBlueLed);
         SeekbarIntensityBlue.setMax(255);
@@ -27,6 +36,7 @@ public class blueled extends ActionBarActivity {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 IntensityBlue.setText(progress + "");
+                ValueBlue = progress;
             }
 
             @Override
@@ -68,5 +78,37 @@ public class blueled extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId())
+        {
+            case R.id.ButtonSaveBlueValue:
+                SaveBlueValue();
+                break;
+        }
+    }
+    public void SaveBlueValue()
+    {
+        FileOutputStream fosblue= null;
+        try {
+            fosblue = openFileOutput("ValueBlue.txt", Context.MODE_PRIVATE);
+            fosblue.write(ValueBlue);
+
+        }
+        catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                fosblue.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
     }
 }

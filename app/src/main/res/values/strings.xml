@@ -41,5 +41,6 @@
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="help">More Info</string>
+    <string name="save">Save</string>
 
 </resources>

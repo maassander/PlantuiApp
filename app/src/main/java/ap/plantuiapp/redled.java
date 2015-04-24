@@ -1,24 +1,33 @@
 package ap.plantuiapp;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
-public class redled extends ActionBarActivity {
+
+public class redled extends ActionBarActivity implements View.OnClickListener {
 
     private SeekBar SeekbarIntensityRed;
     private TextView IntensityRed;
-
+    Button Save;
+     int ValueRed;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_redled);
-
+        Save = (Button)findViewById(R.id.ButtonSaveValue);
+        Save.setOnClickListener(this);
         SeekbarIntensityRed = (SeekBar)findViewById(R.id.SeekBarIntensityRed);
         IntensityRed = (TextView)findViewById(R.id.IntensityRedLed);
         SeekbarIntensityRed.setMax(255);
@@ -27,6 +36,7 @@ public class redled extends ActionBarActivity {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 IntensityRed.setText(progress + "");
+                ValueRed = progress;
 
             }
 
@@ -40,7 +50,11 @@ public class redled extends ActionBarActivity {
 
             }
         });
+
+        Save.setOnClickListener(this);
+
     }
+
 
 
     @Override
@@ -68,5 +82,43 @@ public class redled extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch(v.getId())
+        {
+            case R.id.ButtonSaveValue:
+                SaveValue();
+                break;
+        }
+    }
+    public void SaveValue()
+    {
+        //try catch for exception handling
+        FileOutputStream fos = null;
+        try {
+
+            fos = openFileOutput("ValueRed.txt", Context.MODE_PRIVATE);
+            fos.write(ValueRed);
+
+        }
+        catch (FileNotFoundException e)
+        {
+            e.printStackTrace();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+        finally {
+            //not caring if there is an exception or not this is running anyway.
+            if(fos!= null){
+                try {
+                    fos.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }}
+
     }
 }

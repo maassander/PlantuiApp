@@ -42,5 +42,6 @@
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="help">More Info</string>
     <string name="save">Save</string>
+    <string name="load">Load</string>
 
 </resources>

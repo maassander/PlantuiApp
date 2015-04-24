@@ -13,20 +13,19 @@ import android.widget.PopupMenu;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 
 public class MainActivity extends ActionBarActivity implements View.OnClickListener{
 
-    Button Timerbtn;
-    Button Bluetoothbtn;
-    Button bluebtn;
-    Button redbtn;
-    Button greenbtn;
-    SeekBar SeekbarRed;
-    SeekBar SeekbarGreen;
-    SeekBar SeekbarBlue;
-    TextView RedValue;
-    TextView BlueValue;
-    TextView GreenValue;
+    Button Timerbtn, Bluetoothbtn, bluebtn, redbtn, greenbtn, LoadValues;
+
+    SeekBar SeekbarRed ,SeekbarGreen ,SeekbarBlue;
+
+    TextView RedValue, BlueValue, GreenValue;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +45,9 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         SeekbarRed = (SeekBar)findViewById(R.id.SeekbarRed);
         SeekbarGreen = (SeekBar)findViewById(R.id.SeekbarGreen);
         SeekbarBlue = (SeekBar)findViewById(R.id.SeekbarBlue);
-        SeekbarRed.setMax(100);
+        SeekbarRed.setMax(255);
+        LoadValues = (Button)findViewById(R.id.ButtonLoadValues);
+        LoadValues.setOnClickListener(this);
         SeekbarRed.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -63,12 +64,12 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
             }
         });
-        SeekbarBlue.setMax(100);
+        SeekbarBlue.setMax(255);
+
         SeekbarBlue.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser)
-            {
-                BlueValue.setText(progress+"");
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                BlueValue.setText(progress + "");
             }
 
             @Override
@@ -81,12 +82,12 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
             }
         });
-        SeekbarGreen.setMax(100);
+        SeekbarGreen.setMax(255);
+
         SeekbarGreen.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser)
-            {
-                GreenValue.setText(progress+"");
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                GreenValue.setText(progress + "");
             }
 
             @Override
@@ -153,8 +154,39 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                 break;
             case R.id.Btn_Green:
                 startActivity(new Intent("ap.plantuiapp.greenled"));
+            case R.id.ButtonLoadValues:
+                LoadValues();
+                break;
+        }
+    }
+    public void LoadValues()
+    {
+
+        try {
+              FileInputStream  fis =  openFileInput("ValueRed.txt");
+            int read;
+            //a while because otherwise its only the first byte he read and then stops.
+            /*
+            *
+            *what u see when u open a file?
+            *255
+            * what it actually contained!
+            *32 40 40 for example
+             */
+
+            while ((read = fis.read()) != -1)
+            {
+                SeekbarRed.setProgress((char)read);
+            }
 
         }
+        catch (FileNotFoundException e)
+        {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 }
 

@@ -70,7 +70,19 @@ public class blueled extends ActionBarActivity implements View.OnClickListener{
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             final AlertDialog.Builder alert = new AlertDialog.Builder(blueled.this);
-            alert.setMessage("Meer tekst hierin...");
+            alert.setMessage("Need help at led screen?\n" +
+                    "\n" +
+                    "What can you see from led screen?\n" +
+                    "\t- Visual values of lights\n" +
+                    "\n" +
+                    "What can you set up from led screen?\n" +
+                    "\t- Set the led light intensity from 0% to 100% (0 shutdown, 255 at max power)\n" +
+                    "\n" +
+                    "Still having problems?\n" +
+                    "Go to plantui.com/support/application/led\n" +
+                    "\n" +
+                    "Or send feedback or support request directly to us from\n" +
+                    "plantui.com/support");
             alert.setTitle("Help");
             alert.setIcon(R.drawable.help);
             alert.create();

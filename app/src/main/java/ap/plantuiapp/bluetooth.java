@@ -387,7 +387,20 @@ public class bluetooth extends ActionBarActivity
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             final AlertDialog.Builder alert = new AlertDialog.Builder(bluetooth.this);
-            alert.setMessage("Meer tekst hierin...");
+            alert.setMessage("Need help at bluetooth screen?\n" +
+                    "\n" +
+                    "What can you see from bluetooth screen?\n" +
+                    "\t- Connection with Bluetooth device\n" +
+                    "\n" +
+                    "What can you set up from Bluetooth screen?\n" +
+                    "\t- Search and connect to a Plantui Smart Garden\n" +
+                    "\t  Use the product code from Smart Garden to connect (You can find it from the bottom of the bowl)\n" +
+                    "\n" +
+                    "Still having problems?\n" +
+                    "Go to plantui.com/support/application/bluetooth\n" +
+                    "\n" +
+                    "Or send feedback or support request directly to us from\n" +
+                    "plantui.com/support");
             alert.setTitle("Help");
             alert.setIcon(R.drawable.help);
             alert.create();

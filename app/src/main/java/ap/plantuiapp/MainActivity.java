@@ -126,7 +126,21 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             final AlertDialog.Builder alert = new AlertDialog.Builder(MainActivity.this);
-            alert.setMessage("Meer tekst hierin...");
+            alert.setMessage("Need help at main screen?\n" +
+                    "\n" +
+                    "What can you see from main screen?\n" +
+                    "\t- Visual values of lights\n" +
+                    "\n" +
+                    "What can you set up from main screen?\n" +
+                    "\t- Go to bluetooth and connect to device\n" +
+                    "\t- Go to clock screen and set sleep timings\n" +
+                    "\t- Go to led screen to adjust lights\n" +
+                    "\n" +
+                    "Still having problems?\n" +
+                    "Go to plantui.com/support/application/main\n" +
+                    "\n" +
+                    "Or send feedback or support request directly to us from\n" +
+                    "plantui.com/support");
             alert.setTitle("Help");
             alert.setIcon(R.drawable.help);
             alert.create();

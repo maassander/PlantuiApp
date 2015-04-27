@@ -98,7 +98,20 @@ public class timermenu extends ActionBarActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             final AlertDialog.Builder alert = new AlertDialog.Builder(timermenu.this);
-            alert.setMessage("Meer tekst hierin...");
+            alert.setMessage("Need help at clock screen?\n" +
+                    "\n" +
+                    "What can you see from clock screen?\n" +
+                    "\t- Sleep time (daily rhytm)\n" +
+                    "\n" +
+                    "What can you set up from clock screen?\n" +
+                    "\t- You can set a desired rhythm for your device\n" +
+                    "\t- You can use predefined settings for different plants\n" +
+                    "\n" +
+                    "Still having problems?\n" +
+                    "Go to plantui.com/support/application/clock\n" +
+                    "\n" +
+                    "Or send feedback or support request directly to us from\n" +
+                    "plantui.com/support");
             alert.setTitle("Help");
             alert.setIcon(R.drawable.help);
             alert.create();

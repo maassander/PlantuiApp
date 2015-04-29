@@ -3,7 +3,8 @@
 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="ap.plantuiapp.grid">
+    tools:context="ap.plantuiapp.grid"
+    android:clickable="false">
 
     <ImageView
         android:layout_width="fill_parent"
@@ -84,26 +85,24 @@
                     android:layout_height="20dp"
                     android:id="@+id/SeekbarRed"
                     android:progressDrawable="@drawable/seekbar_progress"
-                    android:thumb="@drawable/thumb"
                     android:rotation="270"
                     android:indeterminate="false"
                     android:layout_weight="1"
                     android:layout_marginBottom="40dp"
                     android:layout_marginTop="40dp"
-                    android:nestedScrollingEnabled="false" />
+                    android:thumb="@drawable/thumb" />
 
                 <SeekBar
                     android:layout_width="100dp"
                     android:layout_height="20dp"
                     android:progressDrawable="@drawable/seekbar_progress_green"
-                    android:thumb="@drawable/thumb"
                     android:id="@+id/SeekbarGreen"
                     android:rotation="270"
                     android:indeterminate="false"
                     android:layout_weight="1"
                     android:layout_marginTop="40dp"
                     android:layout_marginBottom="40dp"
-                    android:nestedScrollingEnabled="false" />
+                    android:thumb="@drawable/thumb" />
 
                 <SeekBar
                     android:layout_width="100dp"
@@ -111,13 +110,11 @@
                     android:id="@+id/SeekbarBlue"
                     android:rotation="270"
                     android:progressDrawable="@drawable/seekbar_progress_blue"
-                    android:thumb="@drawable/thumb"
                     android:layout_marginBottom="40dp"
                     android:layout_column="2"
                     android:layout_weight="1"
                     android:layout_marginTop="40dp"
-                    android:focusableInTouchMode="false"
-                    android:nestedScrollingEnabled="false" />
+                    android:thumb="@drawable/thumb" />
 
             </TableRow>
 

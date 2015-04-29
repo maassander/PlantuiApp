@@ -46,6 +46,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         SeekbarGreen = (SeekBar)findViewById(R.id.SeekbarGreen);
         SeekbarBlue = (SeekBar)findViewById(R.id.SeekbarBlue);
         SeekbarRed.setMax(255);
+        SeekbarRed.setEnabled(false);
         LoadValues = (Button)findViewById(R.id.ButtonLoadValues);
         LoadValues.setOnClickListener(this);
         SeekbarRed.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -65,7 +66,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
             }
         });
         SeekbarBlue.setMax(255);
-
+        SeekbarBlue.setEnabled(false);
         SeekbarBlue.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -83,7 +84,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
             }
         });
         SeekbarGreen.setMax(255);
-
+        SeekbarGreen.setEnabled(false);
         SeekbarGreen.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -187,7 +188,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
             *what u see when u open a file?
             *255
             * what it actually contained!
-            *32 40 40 for example
+            *32 40 40 for example that's why we use (char)
              */
 
             while ((read = fileRedLed.read()) != -1)

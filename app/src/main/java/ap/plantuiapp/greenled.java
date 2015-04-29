@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -94,10 +95,19 @@ public class greenled extends ActionBarActivity implements View.OnClickListener{
 
     @Override
     public void onClick(View v) {
+
+        Context context = getApplicationContext();
+        CharSequence text = "Save Successful!!";
+        int duration = Toast.LENGTH_SHORT;
+
+        Toast toast = Toast.makeText(context, text, duration);
+
         switch (v.getId())
         {
             case R.id.ButtonSaveGreenValue:
                 SaveGreenValue();
+                toast.show();
+                finish();
                 break;
         }
     }

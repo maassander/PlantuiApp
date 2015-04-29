@@ -22,7 +22,7 @@
         <activity
             android:name=".splashscreen"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/title_activity_splashscreen"
+            android:label="PlantuiApp"
              >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

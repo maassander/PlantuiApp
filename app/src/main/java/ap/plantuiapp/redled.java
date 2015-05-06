@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,6 +23,7 @@ public class redled extends ActionBarActivity implements View.OnClickListener {
 
     private SeekBar SeekbarIntensityRed;
     private TextView IntensityRed;
+
     Button Save;
      int ValueRed;
     @Override
@@ -39,6 +41,10 @@ public class redled extends ActionBarActivity implements View.OnClickListener {
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 IntensityRed.setText(progress + "");
                 ValueRed = progress;
+
+
+
+
 
             }
 

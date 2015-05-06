@@ -43,5 +43,6 @@
     <string name="help">More Info</string>
     <string name="save">Save</string>
     <string name="load">Load</string>
+    <string name="switchbluetooth">switchbluetooth</string>
 
 </resources>

@@ -1,75 +1,54 @@
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    tools:context="ap.plantuiapp.bluetooth">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" tools:context="ap.plantui.Bluetooth">
 
-    <ImageView
+    <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:id="@+id/imageView"
-        android:background="@drawable/bamboo"/>
+        android:id="@+id/bt_scrollview" >
 
-    <TableLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:padding="10dp">
-
-        <Switch
-            android:layout_width="wrap_content"
-            android:layout_height="46dp"
-            android:text="@string/bluetoothswitch"
-            android:id="@+id/switchBluetooth"
-            android:textColor="@android:color/white" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="31dp"
-            android:id="@+id/StatusBox"
-            android:textColor="@android:color/white" />
-
-        <Button
-            android:layout_width="wrap_content"
+        <TableLayout
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="@string/list_devices"
-            android:id="@+id/btnListDevices"
-            android:onClick="list"
-            android:textColor="@android:color/white"
-            android:backgroundTintMode="multiply" />
+            android:padding="10dp"
+            android:id="@+id/bt_tablelayout">
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/visible"
-            android:id="@+id/btnVisible"
-            android:nestedScrollingEnabled="false"
-            android:onClick="GetVisible"
-            android:textColor="@android:color/white"
-            android:backgroundTintMode="multiply" />
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="@string/switchbluetooth"
+                android:id="@+id/bt_switch" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/scan"
-            android:id="@+id/btnScan"
-            android:onClick="scan"
-            android:textColor="@android:color/white"
-            android:backgroundTintMode="multiply" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="31dp"
+                android:id="@+id/bt_textview" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/connect"
-            android:id="@+id/btnConnect"
-            android:onClick="connect"
-            android:textColor="@android:color/white"
-            android:backgroundTintMode="multiply" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/list_devices"
+                android:id="@+id/bt_buttonlist" />
 
-        <ListView
-            android:layout_width="wrap_content"
-            android:layout_height="259dp"
-            android:id="@+id/listView" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/scan"
+                android:id="@+id/bt_buttonscan"
+                android:onClick="Scan" />
 
-    </TableLayout>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/connect"
+                android:id="@+id/bt_buttonconnect"
+                android:onClick="Connect" />
 
+            <ListView
+                android:layout_width="wrap_content"
+                android:layout_height="255dp"
+                android:id="@+id/bt_listview" />
+
+        </TableLayout>
+    </ScrollView>
 </RelativeLayout>
